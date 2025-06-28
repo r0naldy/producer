@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'producer/terraform/**'
+      - 'terraform/**'
       - '.github/workflows/deploy.yml'
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: producer/terraform
+        working-directory: terraform
 
     steps:
       - name: Checkout código
