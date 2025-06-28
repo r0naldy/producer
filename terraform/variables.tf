@@ -17,7 +17,7 @@ variable "bucket_json_name" {
 }
 
 variable "lambda_function_name" {
-  description = "Nombre de la función Lambda para limpieza"
+  description = "Nombre de la función Lambda para limpieza."
   type        = string
   default     = "generador_de_archivos_limpios"
 }
