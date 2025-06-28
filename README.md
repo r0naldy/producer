@@ -9,10 +9,10 @@ Mi objetivo en este proyecto fue **automatizar el proceso de limpieza de archivo
 ## 🚀 Arquitectura Implementada
 
 graph TD
-  A[📤 Subida CSV a S3 (bucket-data-2)] --> B[⚙️ Lambda: generador_de_archivos_limpios]
-  B --> C[🔄 Limpieza + Conversión de CSV a JSON]
-  C --> D[💾 Almacenamiento en bucket-json-clear]
-  D --> E[📡 Disponible para consultas desde EC2 o API]
+  A[Subida CSV a S3 (bucket-data-2)] --> B[Lambda: generador_de_archivos_limpios]
+  B --> C[Limpieza y conversión CSV a JSON]
+  C --> D[Almacenamiento en bucket-json-clear]
+  D --> E[Disponible para consulta desde EC2/API]
 
     ⚙️ Servicios Utilizados
 Servicio	Descripción
