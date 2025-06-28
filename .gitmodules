@@ -1,0 +1,3 @@
+[submodule "terraform/lambda_code"]
+	path = terraform/lambda_code
+	url = https://github.com/r0naldy/lambda-limpieza.git
