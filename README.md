@@ -8,11 +8,11 @@ Mi objetivo en este proyecto fue **automatizar el proceso de limpieza de archivo
 
 ## 🚀 Arquitectura Implementada
 
-```mermaid
 graph TD
-  A[Subida CSV a S3 (bucket-data-2)] --> B[Lambda se activa]
-  B --> C[Convierte CSV en JSON]
-  C --> D[Guarda en bucket-json-clear]
+  A[📤 Subida CSV a S3 (bucket-data-2)] --> B[⚙️ Lambda: generador_de_archivos_limpios]
+  B --> C[🔄 Limpieza + Conversión de CSV a JSON]
+  C --> D[💾 Almacenamiento en bucket-json-clear]
+  D --> E[📡 Disponible para consultas desde EC2 o API]
 
     ⚙️ Servicios Utilizados
 Servicio	Descripción
