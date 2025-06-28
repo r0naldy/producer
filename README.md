@@ -10,10 +10,9 @@ Mi objetivo en este proyecto fue **automatizar el proceso de limpieza de archivo
 
 ```mermaid
 graph TD
-    A[Subida CSV a S3 (bucket-data-2)] --> B[Evento ObjectCreated]
-    B --> C[Invocación de Lambda generador_de_archivos_limpios]
-    C --> D[Procesamiento y limpieza del CSV]
-    D --> E[Almacenamiento JSON limpio en bucket-json-clear]
+  A[Subida CSV a S3 (bucket-data-2)] --> B[Lambda se activa]
+  B --> C[Convierte CSV en JSON]
+  C --> D[Guarda en bucket-json-clear]
 
     ⚙️ Servicios Utilizados
 Servicio	Descripción
