@@ -21,8 +21,10 @@ jobs:
         working-directory: terraform
 
     steps:
-      - name: Checkout código
+      - name: Checkout código (con submódulos)
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: Instalar Terraform
         uses: hashicorp/setup-terraform@v3

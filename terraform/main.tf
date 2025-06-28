@@ -52,7 +52,7 @@ resource "aws_iam_role_policy" "lambda_s3_access" {
 
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_dir  = "${path.module}/lambda"
+  source_dir  = "${path.module}/lambda_code" # ← Ruta corregida al submódulo
   output_path = "${path.module}/lambda_function_payload.zip"
 }
 
