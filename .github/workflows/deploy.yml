@@ -1,14 +1,13 @@
-name: Deploy Lambda con Terraform
+name: Destroy Infraestructura con Terraform
 
 on:
   push:
     branches: [main]
     paths:
-      - 'terraform/**'
       - '.github/workflows/deploy.yml'
 
 jobs:
-  deploy:
+  destroy:
     runs-on: ubuntu-latest
 
     env:
@@ -34,8 +33,5 @@ jobs:
       - name: Inicializar Terraform
         run: terraform init
 
-      - name: Validar configuración
-        run: terraform validate
-
-      - name: Aplicar cambios
-        run: terraform apply -auto-approve
+      - name: Destruir infraestructura
+        run: terraform destroy -auto-approve
