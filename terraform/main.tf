@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "json_bucket" {
 }
 
 # -----------------------------
-# Rol IAM para Lambda
+# Rol IAM para Lambdaa
 # -----------------------------
 resource "aws_iam_role" "lambda_role" {
   name = var.lambda_role_name
