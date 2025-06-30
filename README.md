@@ -1,17 +1,20 @@
 # 🧼 Automatización de Limpieza de Archivos CSV con AWS Lambda y S3
-
+```
 ## 📌 Objetivo
 
 Mi objetivo en este proyecto fue automatizar el proceso de limpieza de archivos CSV utilizando servicios nativos de AWS como S3, Lambda y Terraform, integrando además GitHub Actions para una infraestructura reproducible y continua.
 
 ## 🚀 Arquitectura Implementada
-
-```mermaid
+```
+```
+mermaid
 graph TD
   A[Subida CSV a S3 (bucket-data-2)] --> B[Lambda: generador_de_archivos_limpios]
   B --> C[Limpieza y conversión CSV a JSON]
   C --> D[Almacenamiento en bucket-json-clear]
   D --> E[Disponible para consulta desde EC2/API]
+
+```
 ```
 
 ## ⚙️ Servicios Utilizados
@@ -48,7 +51,7 @@ graph TD
 ├── upload.py              # Script local para subir archivos CSV a S3
 └── README.md              # Este documento
 ```
-
+```
 ## 🧼 Funcionalidad de Limpieza (Lambda)
 
 La función Lambda `index.py` detecta y corrige automáticamente errores comunes en los CSV:
@@ -68,7 +71,7 @@ El código Lambda se encuentra en un repositorio separado, vinculado como submó
 ```bash
 git submodule add https://github.com/r0naldy/lambda-limpieza.git terraform/lambda_code
 ```
-
+```
 Esto permite mantener separado el código de infraestructura del código de aplicación, pero gestionarlos juntos en el mismo proyecto.
 
 ## 📦 Despliegue Automático
@@ -78,7 +81,7 @@ Cada vez que hago un push a la rama `main`, se ejecuta el archivo:
 ```yaml
 .github/workflows/deploy.yml
 ```
-
+```
 Este flujo lanza automáticamente Terraform para:
 
 - ✅ Crear/actualizar los buckets S3
